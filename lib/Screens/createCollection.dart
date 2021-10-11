@@ -17,7 +17,6 @@ class _CreateCollectionState extends State<CreateCollection> {
 
   @override
   Widget build(BuildContext context) {
-    final feed = database.child('feedChild/');
     return Scaffold(
       appBar: AppBar(
         title: Text('CreateCollection'),

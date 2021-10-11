@@ -1,7 +1,7 @@
-import 'package:blockfund/createCollection.dart';
-import 'package:blockfund/home.dart';
-import 'package:blockfund/login.dart';
-import 'package:blockfund/viewCollection.dart';
+import 'package:blockfund/Screens/createCollection.dart';
+import 'package:blockfund/Screens/home.dart';
+import 'package:blockfund/Screens/login.dart';
+import 'package:blockfund/Screens/viewCollection.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
