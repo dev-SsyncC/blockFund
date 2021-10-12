@@ -1,3 +1,4 @@
+import 'package:blockfund/Components/card.dart';
 import 'package:blockfund/Components/drawer.dart';
 import 'package:blockfund/utils/Details.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -23,6 +24,7 @@ class _HomeState extends State<Home> {
       list.clear();
       data.forEach((key, value) {
         Detail detail = new Detail(
+          key: key,
           name: value['name'],
           account: value['account'],
           description: value['description'],
@@ -45,19 +47,11 @@ class _HomeState extends State<Home> {
         drawer: MyDrawer(),
         body: Container(
           child: list.length == 0
-              ? CircularProgressIndicator()
+              ? Center(child: CircularProgressIndicator())
               : new ListView.builder(
                   itemCount: list.length,
                   itemBuilder: (context, index) {
-                    return Card(
-                      child: Column(
-                        children: [
-                          Text(list[index].name ?? 'name here'),
-                          Text(list[index].description ?? 'descrp here'),
-                          Text(list[index].account ?? 'account here'),
-                        ],
-                      ),
-                    );
+                    return MyCard(block: list[index]);
                   }),
         ));
   }

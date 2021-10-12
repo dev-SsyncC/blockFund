@@ -1,4 +1,4 @@
 class Detail {
-  String? name, account, description;
-  Detail({this.name, this.account, this.description});
+  String? key, name, account, description;
+  Detail({this.key, this.name, this.account, this.description});
 }

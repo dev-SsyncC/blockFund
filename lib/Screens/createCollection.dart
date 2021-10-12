@@ -55,6 +55,17 @@ class _CreateCollectionState extends State<CreateCollection> {
                     'description': _description.text,
                   }).catchError((e) => {print("you got an error")});
                   print('query added');
+                  final snackBar = SnackBar(
+                    content: const Text('Collection created.'),
+                    action: SnackBarAction(
+                      label: "",
+                      onPressed: () {
+                        // Some code to undo the change.
+                      },
+                    ),
+                  );
+
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 },
               )),
         ],
