@@ -27,21 +27,30 @@ class _CreateCollectionState extends State<CreateCollection> {
             padding: EdgeInsets.all(8.0),
             child: TextFormField(
               controller: _name,
-              decoration: InputDecoration(hintText: "name"),
+              decoration: InputDecoration(
+                labelText: "Name",
+                border: OutlineInputBorder(),
+              ),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(8.0),
             child: TextFormField(
               controller: _account,
-              decoration: InputDecoration(hintText: "account number"),
+              decoration: InputDecoration(
+                labelText: "Account number",
+                border: OutlineInputBorder(),
+              ),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(8.0),
             child: TextFormField(
               controller: _description,
-              decoration: InputDecoration(hintText: "Description"),
+              decoration: InputDecoration(
+                labelText: "Description",
+                border: OutlineInputBorder(),
+              ),
             ),
           ),
           Padding(

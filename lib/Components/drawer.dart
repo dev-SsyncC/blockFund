@@ -15,9 +15,13 @@ class MyDrawer extends StatelessWidget {
             // ListView contains a group of widgets that scroll inside the drawer
             child: ListView(
               children: <Widget>[
-                UserAccountsDrawerHeader(
-                  accountEmail: Text('Email here'),
-                  accountName: Text('Name here'),
+                Container(
+                  color: Colors.blue,
+                  height: 80,
+                  child: Align(
+                    child: Text('Dashboard'),
+                    alignment: Alignment.bottomLeft,
+                  ),
                 ),
                 ListTile(
                   title: Text('Create Collection'),

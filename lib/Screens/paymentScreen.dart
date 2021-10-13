@@ -1,3 +1,4 @@
+import 'package:blockfund/Components/rowbuttons.dart';
 import 'package:blockfund/utils/Details.dart';
 import 'package:flutter/material.dart';
 
@@ -13,11 +14,46 @@ class Payment extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Center(child: Text(block!.account ?? 'Account number will be here')),
-          Center(
-            child: ElevatedButton(
-              child: Text('Initiate Transaction'),
+          ListTile(
+            contentPadding: EdgeInsets.only(left: 0),
+            leading: IconButton(
               onPressed: () {},
+              icon: Icon(Icons.account_balance),
+              iconSize: 45,
+            ),
+            title: Text(block!.name ?? 'Reciver\'s name here'),
+            subtitle: Text(block!.account ?? 'UPI ID'),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: TextFormField(
+              decoration: InputDecoration(
+                labelText: "Amount",
+                border: OutlineInputBorder(),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            'Or send',
+            textAlign: TextAlign.center,
+          ),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: MyButtons(),
+          ),
+          Expanded(
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: TextButton(
+                child: Text('Initiate Transaction'),
+                onPressed: () {},
+              ),
             ),
           )
         ],
