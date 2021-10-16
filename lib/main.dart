@@ -26,7 +26,9 @@ class MyApp extends StatelessWidget {
       routes: {
         '/home': (context) => Home(),
         '/Create': (context) => CreateCollection(),
-        '/view': (context) => ViewCollection(),
+        '/view': (context) => ViewCollection(
+              block: Detail(),
+            ),
         '/payment': (context) => Payment(
               block: Detail(),
             ),

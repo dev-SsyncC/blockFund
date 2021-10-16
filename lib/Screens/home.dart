@@ -28,6 +28,8 @@ class _HomeState extends State<Home> {
           name: value['name'],
           account: value['account'],
           description: value['description'],
+          date: value['date'],
+          accepted: value['ok'],
         );
         list.add(detail);
       });
@@ -37,22 +39,24 @@ class _HomeState extends State<Home> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'blockFund',
-            // style: TextStyle(fontFamily: ),
-          ),
-          centerTitle: true,
+      appBar: AppBar(
+        title: Text(
+          'blockFund',
+          // style: TextStyle(fontFamily: ),
         ),
-        drawer: MyDrawer(),
-        body: Container(
-          child: list.length == 0
-              ? Center(child: CircularProgressIndicator())
-              : new ListView.builder(
-                  itemCount: list.length,
-                  itemBuilder: (context, index) {
-                    return MyCard(block: list[index]);
-                  }),
-        ));
+        centerTitle: true,
+      ),
+      drawer: MyDrawer(),
+      body: Container(
+        child: list.length == 0
+            ? Center(child: CircularProgressIndicator())
+            : new ListView.builder(
+                itemCount: list.length,
+                itemBuilder: (context, index) {
+                  return MyCard(block: list[index]);
+                },
+              ),
+      ),
+    );
   }
 }

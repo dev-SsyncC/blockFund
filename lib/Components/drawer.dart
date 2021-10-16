@@ -19,22 +19,20 @@ class MyDrawer extends StatelessWidget {
                   color: Colors.blue,
                   height: 80,
                   child: Align(
-                    child: Text('Dashboard'),
-                    alignment: Alignment.bottomLeft,
-                  ),
+                      child: Text(
+                        'Dashboard',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      alignment: Alignment.center),
                 ),
                 ListTile(
                   title: Text('Create Collection'),
                   leading: Icon(Icons.monetization_on),
                   onTap: () {
                     Navigator.pushNamed(context, '/Create');
-                  },
-                ),
-                ListTile(
-                  title: Text('View Collection'),
-                  leading: Icon(Icons.money_off),
-                  onTap: () {
-                    Navigator.pushNamed(context, '/view');
                   },
                 ),
               ],

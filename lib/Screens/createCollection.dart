@@ -1,5 +1,6 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class CreateCollection extends StatefulWidget {
   const CreateCollection({Key? key}) : super(key: key);
@@ -54,29 +55,42 @@ class _CreateCollectionState extends State<CreateCollection> {
             ),
           ),
           Padding(
-              padding: EdgeInsets.all(8.0),
-              child: ElevatedButton(
-                child: Text('Submit'),
-                onPressed: () async {
-                  await database.child('/feedChild').push().set({
-                    'name': _name.text,
-                    'account': _account.text,
-                    'description': _description.text,
-                  }).catchError((e) => {print("you got an error")});
-                  print('query added');
-                  final snackBar = SnackBar(
-                    content: const Text('Collection created.'),
-                    action: SnackBarAction(
-                      label: "",
-                      onPressed: () {
-                        // Some code to undo the change.
-                      },
-                    ),
-                  );
+            padding: EdgeInsets.all(8.0),
+            child: ElevatedButton(
+              child: Text('Submit'),
+              onPressed: () async {
+                await database.child('/feedChild').push().set({
+                  'name': _name.text,
+                  'account': _account.text,
+                  'description': _description.text,
+                  'date': (DateFormat.yMMMd().format(DateTime.now())),
+                }).catchError((e) => {print("you got an error")});
+                print('query added');
+                final snackBar = SnackBar(
+                  content: const Text('Collection created.'),
+                  action: SnackBarAction(
+                    label: "",
+                    onPressed: () {
+                      // Some code to undo the change.
+                    },
+                  ),
+                );
 
-                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                },
-              )),
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              },
+            ),
+          ),
+          SizedBox(
+            height: 50,
+          ),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+              'Waiting period of acception will be of 24Hrs',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            ),
+          )
         ],
       ),
     );

@@ -1,0 +1,99 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_key",
+				"type": "string"
+			},
+			{
+				"internalType": "int256",
+				"name": "_amount",
+				"type": "int256"
+			},
+			{
+				"internalType": "string",
+				"name": "_upi",
+				"type": "string"
+			}
+		],
+		"name": "add",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_key",
+				"type": "string"
+			}
+		],
+		"name": "arr",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "int256",
+						"name": "amount",
+						"type": "int256"
+					},
+					{
+						"internalType": "string",
+						"name": "upi",
+						"type": "string"
+					}
+				],
+				"internalType": "struct bf.arrayBlock[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"name": "mp",
+		"outputs": [
+			{
+				"internalType": "int256",
+				"name": "counter",
+				"type": "int256"
+			},
+			{
+				"internalType": "int256",
+				"name": "totalAmount",
+				"type": "int256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_key",
+				"type": "string"
+			}
+		],
+		"name": "total",
+		"outputs": [
+			{
+				"internalType": "int256",
+				"name": "",
+				"type": "int256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

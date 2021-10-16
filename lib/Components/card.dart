@@ -1,5 +1,6 @@
 import 'package:blockfund/Screens/informationScreen.dart';
 import 'package:blockfund/Screens/paymentScreen.dart';
+import 'package:blockfund/Screens/viewCollection.dart';
 import 'package:blockfund/utils/Details.dart';
 import 'package:flutter/material.dart';
 
@@ -14,18 +15,19 @@ class MyCard extends StatelessWidget {
       child: Column(
         children: [
           ListTile(
-            leading: Icon(Icons.arrow_drop_down_circle),
+            leading: block!.accepted == "yes"
+                ? Icon(Icons.beenhere_outlined)
+                : Icon(Icons.cancel_outlined),
             title: Text(block!.name ?? 'Card title 1'),
             subtitle: Text(
-              block!.key ?? 'Secondary Text',
+              block!.date ?? 'date will go here',
               style: TextStyle(color: Colors.black.withOpacity(0.6)),
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              block!.description ??
-                  'Greyhound divisively hello coldly wonderfully marginally far upon excluding.',
+              block!.description ?? 'Description will go here',
               style: TextStyle(color: Colors.black.withOpacity(0.6)),
             ),
           ),
@@ -53,6 +55,17 @@ class MyCard extends StatelessWidget {
                   );
                 },
                 child: const Text('Send help'),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ViewCollection(block: block),
+                    ),
+                  );
+                },
+                child: const Text('View Collection'),
               ),
             ],
           ),
