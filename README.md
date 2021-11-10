@@ -1,8 +1,8 @@
 # blockFund - A way to donate
 
-blockFund is a fundraiser Dapp which uses blockchain technolodgy created with flutter , firebase , solidity , web3dart and infura.io.
+blockFund is a fundraiser Dapp which uses blockchain technology created with flutter , firebase , solidity , web3dart and infura.io.
 
-It uses Ethereum smart contract written in solidity as a base and communiates with it using web3.
+It uses Ethereum smart contract written in solidity and communiates with it using the web3dart library.
 
 A user can create his/her own account which is stored on firebase's authentication.
 
@@ -10,7 +10,7 @@ A user can create his/her own account which is stored on firebase's authenticati
 
 which then sends them to the home screen or feed which is fetched form the firebase realtime storage for fast retrival of data.
 
-view collection sends them to the view collection screen which fetches data form the contracts as an array of tuples
+view collection sends them to the view collection screen which fetches data form the contract as an array of tuples
 which is then destructured into list tiles which shows amount and senders account information.
 
 | <img src="images/homeorfeed.png" width="200"> | | <img src="images/drawer.png" width="200"> | | <img src="images/createcolletion.png" width="200"> |
